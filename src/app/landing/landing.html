@@ -1,0 +1,8 @@
+<div class="landing">
+    <div class="landing-login-container">
+        <h1 *ngIf='!username'>Welcome to Room Reserve</h1>
+        <h1 *ngIf='username'>Welcome Back, {{username.name}}</h1>
+        <button type="button" name="button-login" [hidden]='username' [disabled]='username' (click)='login()' class="landing-button">Login with Github</button>
+        <button type="button" name="button-login" [hidden]='username' [disabled]='username' (click)='login()' class="landing-button">Login with Google</button>
+    </div>
+</div>

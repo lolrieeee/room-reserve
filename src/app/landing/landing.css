@@ -1,0 +1,21 @@
+.landing {
+    background:url(../../assets/landing-hero.jpg);
+    background-size: cover;
+    background-position: center;
+    height:90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-login-container {
+    background:#ffffff;
+    padding:20px;
+    width:300px;
+    text-align: center;
+}
+
+.landing-button {
+    width: 100%;
+    margin:20px 0 0;
+}
