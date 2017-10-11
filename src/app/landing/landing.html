@@ -4,5 +4,6 @@
         <h1 *ngIf='username'>Welcome Back, {{username.name}}</h1>
         <button type="button" name="button-login" [hidden]='username' [disabled]='username' (click)='login()' class="landing-button">Login with Github</button>
         <button type="button" name="button-login" [hidden]='username' [disabled]='username' (click)='login()' class="landing-button">Login with Google</button>
+        <button type="button" name="button-logout" [hidden]='!username' [disabled]='!username' (click)='logout()' class="landing-button">Logout</button>
     </div>
 </div>

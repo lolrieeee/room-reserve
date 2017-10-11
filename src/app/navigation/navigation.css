@@ -1,5 +1,6 @@
 nav {
     background:#ffffff;
+    height: 5vh;
 }
 nav a {
     color:#888888;
@@ -18,13 +19,16 @@ nav li:focus {
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
+    height: 100%;
 }
 #nav-main li {
     list-style: none;
+    display: flex;
+    align-items: center;
 }
 
 #nav-main a {
-    padding:5vh 30px;
+    padding:0 30px;
     display: inline-block;
 }
 

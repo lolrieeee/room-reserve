@@ -5,6 +5,8 @@ import { LandingComponent } from './landing/landing.component';
 import { AboutComponent } from './about/about.component';
 import { RoomsComponent } from './rooms/rooms.component';
 
+import { LoginGuardService } from './services/login-guard.service';
+
 const routes:Routes = [
     {
         path: 'landing',
@@ -20,7 +22,8 @@ const routes:Routes = [
     },
     {
         path: 'rooms/:id',
-        component: RoomsComponent
+        component: RoomsComponent,
+        canActivate: [ LoginGuardService ]
     },
     {
         path: '',
@@ -40,6 +43,9 @@ const routes:Routes = [
     ],
     exports: [
         RouterModule
+    ],
+    providers: [
+        LoginGuardService
     ]
 })
 
