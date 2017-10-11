@@ -1,0 +1,11 @@
+<nav>
+    <ul id="nav-main">
+        <li *ngFor="let nav of navArray"
+        [routerLink]='[nav.url]'
+        routerLinkActive='current-selection'
+        [routerLinkActiveOptions]='{exact:true}'>
+            <a>{{nav.title}}</a>
+        </li>
+        <li><gw-login class="login-container"></gw-login></li>
+    </ul>
+</nav>

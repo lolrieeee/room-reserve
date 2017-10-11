@@ -1,0 +1,14 @@
+.container-grey {
+    background:#eeeeee;
+    padding:20px;
+}
+
+.room-container {
+    background:#ffffff;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+.room-container:last-child {
+    margin-bottom: 0;
+}

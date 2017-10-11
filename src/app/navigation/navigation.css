@@ -1,0 +1,38 @@
+nav {
+    background:#ffffff;
+    height: 7vh;
+}
+nav a {
+    color:#888888;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+nav li:active,
+nav li:focus {
+    outline: none;
+    text-decoration: none;
+}
+#nav-main {
+    padding-left:0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+}
+#nav-main li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+#nav-main a {
+    padding:0 30px;
+    display: inline-block;
+}
+
+.current-selection a {
+    font-weight: 700;
+    color:#222222;
+}
