@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { LoginService } from './../services/login.service'
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'gw-landing',
@@ -7,18 +7,34 @@ import { LoginService } from './../services/login.service'
     styleUrls: ['./landing.css']
 })
 
-export class LandingComponent {
-    constructor(private loginService:LoginService){}
+export class LandingComponent implements OnInit {
+    constructor(private myRoute: ActivatedRoute){
+    }
+    public showWarning;
 
-    public login() {
-        this.loginService.login();
+    ngOnInit() {
+        this.myRoute.fragment.subscribe(data => {
+            console.log(data);
+            this.showWarning = data;
+        });
+
+        /* EXAMPLE OF FULL SUBSCRIBE
+        this.myRoute.fragment.subscribe({
+            next: data => {
+                console.log(data);
+            },
+            error: error => {
+                console.log(error);
+            },
+            complete: () => {
+                console.log('im done!');
+            }
+        });
+        */
     }
 
-    public logout() {
-        this.loginService.logout();
-    }
-
-    get username() {
-        return this.loginService.getLoggedInUser();
+    closeWarning() {
+        this.showWarning = false;
+        window.location.hash = '';
     }
 }

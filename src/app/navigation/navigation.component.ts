@@ -17,19 +17,15 @@ export class NavigationComponent {
             url: 'about'
         },
         {
-            title: 'Rooms',
-            url: 'rooms'
-        },
-        {
-            title: 'Room 100',
+            title: 'Donkey Kong',
             url: 'rooms/100'
         },
         {
-            title: 'Room 200',
+            title: 'Zelda',
             url: 'rooms/200'
         },
         {
-            title: 'Rooms 300',
+            title: 'Halo',
             url: 'rooms/300'
         }
     ]

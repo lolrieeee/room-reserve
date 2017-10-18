@@ -55,24 +55,39 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: 700;
 }
 
+h2 {
+    font-size:30px;
+    line-height: 50px;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
 
+p {
+    font-size:14px;
+    line-height: 20px;
+    color:#222222;
+}
+
 button {
     padding:10px 20px;
     border:none;
-    background: none;
-    border:#702190 solid 1px;
+    color:#ffffff;
+    background: #702190;
     border-radius: 5px;
-    font-size: 700;
+    font-weight: 700;
+    margin:10px 0;
+    font-size: 14px;
 }
 
 button:hover {
-    background: #a627da;
-    border:#a627da solid 1px;
-    color:#ffffff;
+    background: #a724dd;
+}
+
+button:active {
+    outline: none;
 }
 
 button[disabled] {

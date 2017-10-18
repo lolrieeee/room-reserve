@@ -1,11 +1,21 @@
 <nav>
     <ul id="nav-main">
+        <li><h1>Room Reserve</h1></li>
         <li *ngFor="let nav of navArray"
         [routerLink]='[nav.url]'
         routerLinkActive='current-selection'
         [routerLinkActiveOptions]='{exact:true}'>
             <a>{{nav.title}}</a>
         </li>
-        <li><gw-login class="login-container"></gw-login></li>
     </ul>
+    <div class="account-container">
+        Account Component
+        <div class="account-detail">
+            <ul>
+                <li>Account Settings</li>
+                <li></li>
+            </ul>
+            <gw-login></gw-login>
+        </div>
+    </div>
 </nav>

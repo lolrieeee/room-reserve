@@ -1,38 +1,70 @@
 nav {
-    background:#ffffff;
-    height: 7vh;
+    display: flex;
+    background: #eee;
 }
-nav a {
+
+#nav-main {
+    width:80%;
+}
+
+#nav-main li {
+    display: inline-block;
+    padding:15px 30px;
+}
+
+#nav-main a {
     color:#888888;
     text-decoration: none;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
 }
-nav li:active,
-nav li:focus {
+
+#nav-main li:hover a {
+    color:#222222;
+    transition: color .25s ease-out;
+}
+
+#nav-main li:active,
+#nav-main li:focus {
     outline: none;
     text-decoration: none;
 }
-#nav-main {
-    padding-left:0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    height: 100%;
-}
-#nav-main li {
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
 
-#nav-main a {
-    padding:0 30px;
-    display: inline-block;
-}
-
-.current-selection a {
+#nav-main .current-selection a {
     font-weight: 700;
-    color:#222222;
+    color:#702190;
+}
+
+#nav-main .current-selection a:after {
+    content:"";
+    display: block;
+    width:100%;
+    height:4px;
+    margin-top:4px;
+    background:#702190;
+}
+
+#nav-main .current-selection:hover a {
+    color:#702190;
+}
+
+.account-container {
+    padding:15px 30px;
+    position: relative;
+    width: 20%;
+}
+
+.account-detail {
+    display: none;
+    background:#fff;
+    padding:15px 30px;
+    margin-top:20px;
+    position: absolute;
+    left:0;
+    right:0;
+    box-sizing: border-box;
+}
+
+.account-container:hover .account-detail {
+    display: block;
 }

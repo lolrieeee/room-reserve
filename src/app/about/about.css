@@ -1,0 +1,38 @@
+.about-room-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about-room-image {
+    width:50%;
+    background:#eee;
+    height:400px;
+}
+
+.about-room-text {
+    width:50%;
+    padding:20px;
+    box-sizing: border-box;
+}
+
+.about-room-container:nth-child(odd) .about-room-image {
+    order:1;
+}
+
+.about-donkey-kong {
+    background:url('../../assets/room-donkey-kong.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.about-zelda {
+    background:url('../../assets/room-zelda.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.about-halo {
+    background:url('../../assets/room-halo.jpg');
+    background-position: center;
+    background-size: cover;
+}

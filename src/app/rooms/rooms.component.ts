@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ICanDeactivate } from './../services/can-deactivate-guard.service';
+
+//import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
     selector: 'gw-room',
@@ -7,6 +9,23 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
     styleUrls: ['./rooms.css']
 })
 
+export default class RoomsComponent implements ICanDeactivate {
+    public canThisActivate;
+
+    constructor(){
+        this.canThisActivate = true;
+    }
+
+    toggleCanDeactivate() {
+        this.canThisActivate = !this.canThisActivate;
+    }
+
+    canDeactivate() {
+        return true;
+    }
+}
+
+/*
 export class RoomsComponent implements OnInit {
 
     constructor(
@@ -26,3 +45,4 @@ export class RoomsComponent implements OnInit {
     }
 
 }
+*/

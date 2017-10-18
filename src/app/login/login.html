@@ -1,5 +1,9 @@
-<div *ngIf='username'><div class="image-holder"></div>{{username.name}}</div>
-<div>
-    <button type="button" name="button-login" [hidden]='username' [disabled]='username' (click)='login()'>Login</button>
+<button type="button" name="button-login" [hidden]='username' [disabled]='username' (click)='login()' class="button-login">Login with Github</button>
+<button type="button" name="button-login" [hidden]='username' [disabled]='username' (click)='login()' class="button-login">Login with Google</button>
+<button type="button" name="button-logout" [hidden]='!username' [disabled]='!username' (click)='logout()' class="button-login">Logout</button>
+<!--
+<div *ngIf='username' class="account-settings">
+    <img src="../assets/larry.jpg" alt="" class="profile-img">{{username.name}}
     <button type="button" name="button-logout" [hidden]='!username' [disabled]='!username' (click)='logout()'>Logout</button>
 </div>
+-->

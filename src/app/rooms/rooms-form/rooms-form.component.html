@@ -1,0 +1,12 @@
+<div>
+    <form #myform="ngForm" (ngSubmit)="submitForm(myForm)" novalidate>
+        <div>
+            <input type="text" name="myTextInput" ngModel required>
+        </div>
+        <div>
+            <input type="email" name="myEmailInput" ngModel required email>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <pre>{{ myForm }}</pre>
+</div>

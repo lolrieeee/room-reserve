@@ -2,7 +2,7 @@
     background:url(../../assets/landing-hero.jpg);
     background-size: cover;
     background-position: center;
-    height:93vh;
+    height:90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,17 @@
     text-align: center;
 }
 
-.landing-button {
-    width: 100%;
-    margin:20px 0 0;
+.landing-profile-img {
+    width:100px;
+    border-radius: 50%;
+    margin-bottom:20px;
+}
+
+.warning-landing {
+    background:#e44949;
+    color:#ffffff;
+    border-radius: 20px;
+    padding:5px 10px;
+    display: inline-block;
+    margin:10px 0;
 }
