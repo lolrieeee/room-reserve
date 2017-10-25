@@ -18,15 +18,15 @@ export class NavigationComponent {
         },
         {
             title: 'Donkey Kong',
-            url: 'rooms/100'
+            url: 'rooms/donkey-kong'
         },
         {
             title: 'Zelda',
-            url: 'rooms/200'
+            url: 'rooms/zelda'
         },
         {
             title: 'Halo',
-            url: 'rooms/300'
+            url: 'rooms/halo'
         }
     ]
 }

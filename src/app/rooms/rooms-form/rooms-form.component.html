@@ -1,12 +1,92 @@
 <div>
-    <form #myform="ngForm" (ngSubmit)="submitForm(myForm)" novalidate>
-        <div>
-            <input type="text" name="myTextInput" ngModel required>
+    <div class="step-1" *ngIf=" stepProcess === 'step 1' ">
+        <h2>Choose Start Time</h2>
+
+        <h3>Start Hour</h3>
+        <div class="test-hour-container">
+            <ul class="hour-container">
+                <li class="room-choose-time" *ngFor="let hour of startHours" (click)="changeStartHour(hour)" [ngClass]="{'chosen-hour': hour === selectedStartHour}">{{ hour.displayTime }}</li>
+            </ul>
         </div>
-        <div>
-            <input type="email" name="myEmailInput" ngModel required email>
+
+        <h3>Start Minute</h3>
+        <div class="test-minute-container">
+            <ul class="minute-container">
+                <li class="room-choose-time" *ngFor="let minute of startMinutes" (click)="changeStartMinute(minute)" [ngClass]="{'chosen-hour': minute === selectedStartMinute}">{{ minute }}</li>
+                <li class="room-choose-daytime" *ngFor="let daytime of startDaytime" (click)="changeStartDaytime(daytime)" [ngClass]="{'chosen-hour': daytime === selectedStartDaytime}">{{ daytime }}</li>
+            </ul>
         </div>
-        <button type="submit">Submit</button>
-    </form>
-    <pre>{{ myForm }}</pre>
+        <button  routerLink='../list'>Cancel</button>
+        <button (click)="goStep2()" [disabled]="!checkStartTime()">Choose End Time</button>
+    </div>
+
+    <div class="step-2" *ngIf=" stepProcess === 'step 2' ">
+        <h2>Choose End Time</h2>
+
+        <h3>End Hour</h3>
+        <div class="test-hour-container">
+            <ul class="hour-container">
+                <li class="room-choose-time" *ngFor="let hour of endHours" (click)="changeEndHour(hour)" [ngClass]="{'chosen-hour': hour === selectedEndHour}">{{ hour.displayTime }}</li>
+            </ul>
+        </div>
+
+        <h3>End Minute</h3>
+        <div class="test-minute-container">
+            <ul class="minute-container">
+                <li class="room-choose-time room-choose-minute" *ngFor="let minute of endMinutes" (click)="changeEndMinute(minute)" [ngClass]="{'chosen-hour': minute === selectedEndMinute}">{{ minute }}</li>
+                <li class="room-choose-daytime room-choose-minute" *ngFor="let daytime of endDaytime" (click)="changeEndDaytime(daytime)" [ngClass]="{'chosen-hour': daytime === selectedEndDaytime}">{{ daytime }}</li>
+            </ul>
+        </div>
+        <button (click)="goStep3()" [disabled]="!checkEndTime()">Choose Reason</button>
+    </div>
+
+    <div class="step-3" *ngIf=" stepProcess === 'step 3' ">
+        <h2>Reason for booking</h2>
+        <h3 *ngFor="let reason of options" class="choose-reason" (click)="changeSelectedReason(reason)" [ngClass]="{'chosen-reason': reason === selectedReason}">{{ reason }}</h3>
+        <button (click)="reviewReservation()" [disabled]="!checkReason()">Review Details</button>
+    </div>
+
+    <div class="step-4" [hidden]=" stepProcess !== 'step 4' ">
+        <h2>Review Details</h2>
+        <form #myForm="ngForm" (ngSubmit)="submitForm(myForm.value)" novalidate>
+            <div>
+                <p>
+                    <strong>Name:</strong>
+                </p>
+                <p>
+                    <strong>Email:</strong>
+                </p>
+                <p>
+                    <strong>Reason:</strong> {{ reservationReason.value }}
+                </p>
+                <p>
+                    <strong>Start Time:</strong> {{ selectedStartHour?.displayTime }}:{{ selectedStartMinute }} {{selectedStartDaytime}}
+                </p>
+                <p>
+                    <strong>End Time:</strong> {{ selectedEndHour?.displayTime }}:{{ selectedEndMinute }} {{selectedEndDaytime}}
+                </p>
+                <p>
+                    <strong>Reason:</strong> {{ reservationReason.value }}
+                </p>
+            </div>
+            <div class="reservation-form">
+                Reason for reservation:
+                <select name="reserveReason" #reservationReason="ngModel" ngModel required>
+                    <option [value]="value" *ngFor="let value of options">{{ value }}</option>
+                </select>
+                <div class="error" *ngIf="reservationReason.invalid">You need to select something</div>
+                Name:
+                <input type="text" name="myTextInput" ngModel required>
+                Email:
+                <input type="email" name="myEmailInput" ngModel required email>
+                Start Time:
+                <input type="time" name="startDateTime" #userStartTime="ngModel" ngModel required>
+                End Time:
+                <input type="time" name="endDateTime" #userEndTime="ngModel" ngModel required>
+            </div>
+            <button type="submit">Book!</button>
+        </form>
+        {{ myForm.value | json }}
+
+    </div>
 </div>

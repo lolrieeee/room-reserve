@@ -65,9 +65,13 @@ body {
     font-weight: 300;
 }
 
+strong {
+    font-weight: bold;
+}
+
 p {
-    font-size:14px;
-    line-height: 20px;
+    font-size:16px;
+    line-height: 24px;
     color:#222222;
 }
 
@@ -80,16 +84,33 @@ button {
     font-weight: 700;
     margin:10px 0;
     font-size: 14px;
+    transition:all ease-out .25s;
+}
+
+button.inversed {
+    color:#702190;
+    background: transparent;
+    border:solid 1px #702190;
 }
 
 button:hover {
+    color:#ffffff;
     background: #a724dd;
 }
 
-button:active {
+button.inversed:hover {
+    background: #702190;
+}
+
+button:active,
+button:focus {
     outline: none;
 }
 
 button[disabled] {
     background:#eeeeee;
+}
+
+.img-responsive {
+    width:100%;
 }

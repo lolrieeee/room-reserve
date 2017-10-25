@@ -1,6 +1,6 @@
 nav {
     display: flex;
-    background: #eee;
+    background: #fff;
 }
 
 #nav-main {
@@ -10,6 +10,10 @@ nav {
 #nav-main li {
     display: inline-block;
     padding:15px 30px;
+}
+
+.nav-logo {
+    color:#702190;
 }
 
 #nav-main a {
@@ -54,15 +58,26 @@ nav {
     width: 20%;
 }
 
+.account-name {
+    color:#702190;
+    font-size:16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    text-align: right;
+    display: block;
+}
+
 .account-detail {
     display: none;
     background:#fff;
     padding:15px 30px;
-    margin-top:20px;
+    margin-top:15px;
     position: absolute;
     left:0;
     right:0;
     box-sizing: border-box;
+    z-index: 100;
 }
 
 .account-container:hover .account-detail {

@@ -1,6 +1,6 @@
 <nav>
     <ul id="nav-main">
-        <li><h1>Room Reserve</h1></li>
+        <li><h1 class="nav-logo">Room Reserve</h1></li>
         <li *ngFor="let nav of navArray"
         [routerLink]='[nav.url]'
         routerLinkActive='current-selection'
@@ -9,7 +9,7 @@
         </li>
     </ul>
     <div class="account-container">
-        Account Component
+        <span class="account-name">V</span>
         <div class="account-detail">
             <ul>
                 <li>Account Settings</li>
