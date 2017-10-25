@@ -1,0 +1,19 @@
+.dashboard {
+    background:#ffffff;
+    min-height:90vh;
+    display: flex;
+    padding:30px;
+    flex-wrap: wrap;
+}
+
+.dashboard-title {
+    width:100%;
+}
+
+.dashboard-left {
+    width:50%;
+}
+
+.dashboard-right {
+    width:50%;
+}

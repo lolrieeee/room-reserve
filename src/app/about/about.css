@@ -1,0 +1,36 @@
+.about-room-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.about-room-container:nth-child(even) {
+    display: flex;
+    flex-wrap: wrap;
+    background: #eee;
+}
+
+.about-room-image {
+    width:50%;
+    padding:40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.about-room-image img {
+    max-width: 500px;
+}
+
+.about-room-text {
+    width:50%;
+    padding:100px;
+    box-sizing: border-box;
+}
+
+.about-room-text h2 {
+    color:#702190;
+}
+
+.about-room-container:nth-child(odd) .about-room-image {
+    order:1;
+}

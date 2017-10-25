@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+
+//import { ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
     selector: 'gw-room',
@@ -7,6 +9,19 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
     styleUrls: ['./rooms.css']
 })
 
+export default class RoomsComponent implements OnInit {
+    public roomId:string;
+
+    constructor(private _activatedRoute:ActivatedRoute){ }
+
+    public ngOnInit() {
+        this._activatedRoute.paramMap.subscribe(route => {
+            this.roomId = route.get('id');
+        });
+    }
+}
+
+/*
 export class RoomsComponent implements OnInit {
 
     constructor(
@@ -26,3 +41,4 @@ export class RoomsComponent implements OnInit {
     }
 
 }
+*/

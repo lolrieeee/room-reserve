@@ -1,34 +1,28 @@
+//vendor imports
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+//components
 import { LandingComponent } from './landing/landing.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
-import { RoomsComponent } from './rooms/rooms.component';
-
-import { LoginGuardService } from './services/login-guard.service';
 
 const routes:Routes = [
+    {
+        path: '',
+        component: LandingComponent
+    },
     {
         path: 'landing',
         component: LandingComponent
     },
     {
+        path: 'dashboard',
+        component: DashboardComponent
+    },
+    {
         path: 'about',
         component: AboutComponent
-    },
-    {
-        path: 'rooms',
-        component: RoomsComponent
-    },
-    {
-        path: 'rooms/:id',
-        component: RoomsComponent,
-        canActivate: [ LoginGuardService ]
-    },
-    {
-        path: '',
-        redirectTo: 'landing',
-        pathMatch: 'full'
     },
     {
         path: '**',
@@ -43,9 +37,6 @@ const routes:Routes = [
     ],
     exports: [
         RouterModule
-    ],
-    providers: [
-        LoginGuardService
     ]
 })
 
@@ -53,6 +44,6 @@ export class AppRoutingModule { }
 
 export const routedComponents = [
     LandingComponent,
-    AboutComponent,
-    RoomsComponent
+    DashboardComponent,
+    AboutComponent
 ];

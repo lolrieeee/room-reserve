@@ -1,11 +1,39 @@
 <div class="container-grey">
-    <div class="room-container">
-        Donkey Kong
+    <div class="room-background room-{{roomId}}">
+        <h2>{{ roomId }}</h2>
     </div>
-    <div class="room-container">
-        Zelda
+    <div class="room-reservation">
+        <div>00</div>
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+        <div>04</div>
+        <div>05</div>
+        <div>06</div>
+        <div>07</div>
+        <div>08</div>
+        <div>09</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+        <div>17</div>
+        <div>18</div>
+        <div>19</div>
+        <div>20</div>
+        <div>21</div>
+        <div>22</div>
+        <div>23</div>
+        <div>24</div>
     </div>
-    <div class="room-container">
-        Link
+    <div class="room-detail">
+        <!--
+        [roomId] is a binding to the property on our FORM component
+        ="roomId" is the room ID on THIS component
+        -->
+        <router-outlet></router-outlet>
     </div>
 </div>
